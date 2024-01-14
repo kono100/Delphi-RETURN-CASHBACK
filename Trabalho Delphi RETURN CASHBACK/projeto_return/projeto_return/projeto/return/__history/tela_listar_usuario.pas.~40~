@@ -1,0 +1,72 @@
+unit tela_listar_usuario;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Data.Win.ADODB;
+
+type
+  Tform_listar_usuario = class(TForm)
+    Panel1: TPanel;
+    btn_novo_registro: TBitBtn;
+    btn_editar_registro: TBitBtn;
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    btn_atualizar: TBitBtn;
+    procedure btn_novo_registroClick(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure btn_editar_registroClick(Sender: TObject);
+    procedure ADOQuery1AfterOpen(DataSet: TDataSet);
+    procedure btn_atualizarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_listar_usuario: Tform_listar_usuario;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, tela_cadastro_usuario, editar_usuario;
+
+procedure Tform_listar_usuario.ADOQuery1AfterOpen(DataSet: TDataSet);
+begin
+if ADOQuery1.FieldByName('nivel_acesso').value = 1 then
+    begin
+      ADOQuery1.FieldByName('nivel_acesso').value :=   'Administrador';
+    end;
+end;
+
+procedure Tform_listar_usuario.BitBtn1Click(Sender: TObject);
+begin
+form_listar_usuario.Close;
+form_listar_usuario.show;
+end;
+
+procedure Tform_listar_usuario.btn_atualizarClick(Sender: TObject);
+begin
+ADOQuery1.Active := False;
+ADOQuery1.Active := True;
+DBGrid1.Refresh;
+end;
+
+procedure Tform_listar_usuario.btn_editar_registroClick(Sender: TObject);
+begin
+    form_editar_usuario.Show;
+    form_listar_usuario.Close;
+end;
+
+procedure Tform_listar_usuario.btn_novo_registroClick(Sender: TObject);
+begin
+form_cadastro_usuario.Show;
+form_listar_usuario.Close;
+end;
+end.

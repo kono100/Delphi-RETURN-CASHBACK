@@ -1,0 +1,158 @@
+unit UnitRedifenirSenha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB,
+  Data.Win.ADODB, Vcl.Imaging.pngimage;
+
+type
+  TFormRedifinirSenha = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    EdtCodVerificação: TEdit;
+    EdtSenha: TEdit;
+    Panel1: TPanel;
+    BtRedefinirSenha: TButton;
+    ADOConnection1: TADOConnection;
+    Image2: TImage;
+    Label3: TLabel;
+    EdtConfirmarSenha: TEdit;
+    procedure BtRedefinirSenhaClick(Sender: TObject);
+    procedure EdtCodVerificaçãoMouseMove(Sender: TObject; Shift: TShiftState;
+      X, Y: Integer);
+    procedure EdtSenhaMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure EdtConfirmarSenhaMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRedifinirSenha: TFormRedifinirSenha;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormRedifinirSenha.BtRedefinirSenhaClick(Sender: TObject);
+begin
+
+begin
+
+
+
+ if EdtCodVerificação.Text = ''  then
+ begin
+    EdtCodVerificação.Color:=clRed;
+  showmessage (' Campo Codigo de Vereficação está vazio ! ')  ;
+  EdtCodVerificação.SetFocus;
+ end
+
+ else
+
+ if EdtSenha.Text = ''  then
+ begin
+
+  EdtSenha.Color:=clRed;
+  showmessage (' Campo Senha está vazio ! ')  ;
+  EdtSenha.SetFocus;
+ end
+
+ else
+
+  if EdtConfirmarSenha.Text = ''  then
+ begin
+
+  EdtConfirmarSenha.Color:=clRed;
+  showmessage (' Campo Confirmar Senha está vazio ! ')  ;
+  EdtConfirmarSenha.SetFocus;
+ end
+
+ else
+
+
+
+ begin
+
+ if (EdtSenha.Text <> EdtConfirmarSenha.Text)   then
+begin
+
+EdtSenha.Font.Color:=clGreen;
+EdtConfirmarSenha.Font.Color:=clGreen;
+showmessage ('Senha Diferente !');
+
+end
+else
+begin
+if (EdtSenha.Text = EdtConfirmarSenha.Text)   then
+begin
+EdtSenha.Font.Color:=clBlack;
+EdtConfirmarSenha.Font.Color:=clBlack;
+end;
+
+
+begin
+
+showmessage ('Senha Redefinida ! ');
+
+close;
+
+end;
+ end;
+
+
+
+
+end;
+
+begin
+
+begin
+
+
+
+end
+end;
+
+end;
+
+
+
+
+
+
+end;
+
+procedure TFormRedifinirSenha.EdtCodVerificaçãoMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+begin
+
+EdtCodVerificação.Color:=clWhite;
+
+
+end;
+
+procedure TFormRedifinirSenha.EdtConfirmarSenhaMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+begin
+
+
+EdtConfirmarSenha.Color:=clWhite;
+
+end;
+
+procedure TFormRedifinirSenha.EdtSenhaMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+begin
+
+
+EdtSenha.Color:=clWhite;
+
+end;
+
+end.

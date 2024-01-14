@@ -1,0 +1,60 @@
+unit tela_cadastro_consumidor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask,
+  Vcl.ExtCtrls, Data.DB, Data.Win.ADODB;
+
+type
+  Tform_cadastro_consumidor = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label5: TLabel;
+    Label7: TLabel;
+    Panel1: TPanel;
+    edt_nome: TEdit;
+    edt_email: TEdit;
+    edt_telefone: TMaskEdit;
+    edt_cpf: TMaskEdit;
+    btn_entrar: TBitBtn;
+    edt_data_nascimento: TMaskEdit;
+    Label3: TLabel;
+    edt_saldo_cashback: TEdit;
+    Label4: TLabel;
+    ADOConn: TADOConnection;
+    ADOQueryConsumidorI: TADOQuery;
+    DataSourceConsumidorI: TDataSource;
+    procedure btn_entrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_cadastro_consumidor: Tform_cadastro_consumidor;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tform_cadastro_consumidor.btn_entrarClick(Sender: TObject);
+begin
+ADOQueryConsumidorI.Close;
+ADOQueryConsumidorI.SQL.Clear;
+ADOQueryConsumidorI.SQL.Text:= 'INSERT INTO consumidor(nome, cpf, data_nascimento, email, telefone, saldo_caschback) VALUES(:pnome, :pcpf, :pdata_nascimento, :pemail, :ptelefone, :psaldo_cashback)';
+ADOQueryConsumidorI.Parameters.ParamByName('pnome').Value := edt_nome.Text;
+ADOQueryConsumidorI.Parameters.ParamByName('pcpf').Value := edt_cpf.Text;
+ADOQueryConsumidorI.Parameters.ParamByName('pdata_nascimento').Value := edt_data_nascimento.Text;
+ADOQueryConsumidorI.Parameters.ParamByName('pemail').Value := edt_email.Text;
+ADOQueryConsumidorI.Parameters.ParamByName('ptelefone').Value := edt_telefone.Text;
+ADOQueryConsumidorI.Parameters.ParamByName('psaldo_cashback').Value := edt_saldo_cashback.Text;
+
+ADOQueryConsumidorI.ExecSQL;
+showMessage('Usuário Registrado com Sucesso!');
+form_cadastro_consumidor.Close;
+end;
+
+end.

@@ -1,0 +1,106 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 277
+  ClientWidth = 429
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 32
+    Top = 83
+    Width = 111
+    Height = 13
+    Caption = 'altera'#231#227'o de cashback:'
+    FocusControl = cashback
+  end
+  object cashback: TDBEdit
+    Left = 149
+    Top = 80
+    Width = 134
+    Height = 21
+    DataField = 'porcentagem_cashback'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object concluir: TButton
+    Left = 160
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = 'concluir'
+    TabOrder = 1
+    OnClick = concluirClick
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 104
+    Top = 8
+    Width = 240
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object visualization: TDBEdit
+    Left = 128
+    Top = 200
+    Width = 121
+    Height = 21
+    DataField = 'porcentagem_cashback'
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object data_reg: TDBEdit
+    Left = 64
+    Top = 163
+    Width = 238
+    Height = 21
+    DataField = 'data_reg'
+    DataSource = DataSource1
+    TabOrder = 4
+    OnChange = data_regChange
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Postg' +
+      'reSQL35W'
+    LoginPrompt = False
+    Left = 368
+    Top = 128
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from configuracao')
+    Left = 368
+    Top = 80
+    object ADOQuery1id_configuracao: TAutoIncField
+      FieldName = 'id_configuracao'
+      ReadOnly = True
+    end
+    object ADOQuery1porcentagem_cashback: TFloatField
+      FieldName = 'porcentagem_cashback'
+    end
+    object ADOQuery1data_reg: TDateTimeField
+      FieldName = 'data_reg'
+    end
+    object ADOQuery1data_alt: TDateTimeField
+      FieldName = 'data_alt'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 368
+    Top = 184
+  end
+end

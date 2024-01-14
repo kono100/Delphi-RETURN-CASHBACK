@@ -1,0 +1,63 @@
+unit tela_editar_consumidor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Mask, Data.DB, Data.Win.ADODB;
+
+type
+  Tform_editar_consumidor = class(TForm)
+    Panel1: TPanel;
+    btn_localizar: TBitBtn;
+    lbl_id_usuario: TLabel;
+    Label1: TLabel;
+    edt_nome: TEdit;
+    Label2: TLabel;
+    edt_email: TEdit;
+    edt_telefone: TMaskEdit;
+    Label5: TLabel;
+    edt_cpf: TMaskEdit;
+    Label7: TLabel;
+    Label4: TLabel;
+    edt_saldo_cashback: TEdit;
+    Label3: TLabel;
+    edt_data_nascimento: TMaskEdit;
+    btn_entrar: TBitBtn;
+    edt_cpf_buscar: TMaskEdit;
+    ADOConn: TADOConnection;
+    ADOQueryConsumidorE: TADOQuery;
+    DataSourceConsumidorI: TDataSource;
+    procedure btn_localizarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_editar_consumidor: Tform_editar_consumidor;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tform_editar_consumidor.btn_localizarClick(Sender: TObject);
+begin
+
+  ADOQueryConsumidorE.Close;
+  ADOQueryConsumidorE.SQL.Text := 'SELECT * FROM consumidores WHERE cpf = :pcpf';
+  ADOQueryConsumidorE.Parameters.ParamByName('pcpf').Value := edt_cpf_buscar.Text;
+  ADOQueryConsumidorE.Open;
+
+  edt_nome.Text := ADOQueryConsumidorE.FieldByName('nome').AsString;
+  edt_telefone.Text := ADOQueryConsumidorE.FieldByName('telefone').AsString;
+  edt_email.Text := ADOQueryConsumidorE.FieldByName('email').AsString;
+  edt_cpf.Text := ADOQueryConsumidorE.FieldByName('cpf').AsString;
+  edt_data_nascimento.Text := ADOQueryConsumidorE.FieldByName('data_nascimento').AsString;
+  edt_saldo_cashback.Text := ADOQueryConsumidorE.FieldByName('edt_saldo_cashback').AsString;
+
+end;
+
+end.

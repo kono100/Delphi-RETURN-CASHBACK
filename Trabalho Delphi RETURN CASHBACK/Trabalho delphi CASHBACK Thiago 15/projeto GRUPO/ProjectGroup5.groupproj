@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B489DDD8-3989-4BA7-8AF5-CDF608AAD81C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Redifenir Senha\ProjRedifenirSenha.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Cadastro novo\ProjCadastro.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProjRedifenirSenha">
+        <MSBuild Projects="..\Redifenir Senha\ProjRedifenirSenha.dproj"/>
+    </Target>
+    <Target Name="ProjRedifenirSenha:Clean">
+        <MSBuild Projects="..\Redifenir Senha\ProjRedifenirSenha.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjRedifenirSenha:Make">
+        <MSBuild Projects="..\Redifenir Senha\ProjRedifenirSenha.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjCadastro">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj"/>
+    </Target>
+    <Target Name="ProjCadastro:Clean">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjCadastro:Make">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProjRedifenirSenha;ProjCadastro"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProjRedifenirSenha:Clean;ProjCadastro:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProjRedifenirSenha:Make;ProjCadastro:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

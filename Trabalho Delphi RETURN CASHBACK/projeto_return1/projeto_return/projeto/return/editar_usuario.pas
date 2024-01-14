@@ -1,0 +1,131 @@
+unit editar_usuario;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask,
+  Vcl.ExtCtrls;
+
+type
+  Tform_editar_usuario = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label5: TLabel;
+    Label7: TLabel;
+    Label4: TLabel;
+    Panel1: TPanel;
+    edt_nome: TEdit;
+    edt_email: TEdit;
+    btn_entrar: TBitBtn;
+    edt_nivel_acesso: TComboBox;
+    lbl_id_usuario: TLabel;
+    edt_id: TEdit;
+    btn_localizar: TBitBtn;
+    edt_telefone: TMaskEdit;
+    edt_cpf: TMaskEdit;
+    btn_limpar: TButton;
+    procedure btn_localizarClick(Sender: TObject);
+    procedure btn_entrarClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_editar_usuario: Tform_editar_usuario;
+  id : integer;
+  nome, cpf, telefone, email, nivel_acesso, nivel, nivel_acesso_recebe: string;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, tela_listar_usuario;
+
+procedure Tform_editar_usuario.btn_entrarClick(Sender: TObject);
+
+begin
+
+  id := strtoint(edt_id.Text);
+  nome := edt_nome.Text;
+  telefone := edt_telefone.Text;
+  email := edt_email.Text;
+  cpf := edt_cpf.Text;
+  nivel_acesso_recebe := edt_nivel_acesso.Text;
+
+  if nivel_acesso_recebe = 'Administrador' then
+    begin
+      nivel_acesso := '1';
+    end
+  else
+    begin
+      nivel_acesso := '2';
+    end;
+
+  DM.ADOQuery2.Close;
+  DM.ADOQuery2.SQL.Text := 'UPDATE usuarios SET nome = :pnome, email = :pemail, cpf = :pcpf, telefone = :ptelefone, nivel_acesso = :pnivel_acesso WHERE id_user = :pid ';
+  DM.ADOQuery2.Parameters.ParamByName('pid').Value := id;
+  DM.ADOQuery2.Parameters.ParamByName('pnome').Value := nome;
+  DM.ADOQuery2.Parameters.ParamByName('pemail').Value := email;
+  DM.ADOQuery2.Parameters.ParamByName('pcpf').Value := cpf;
+  DM.ADOQuery2.Parameters.ParamByName('ptelefone').Value := telefone;
+  DM.ADOQuery2.Parameters.ParamByName('pnivel_acesso').Value := nivel_acesso;
+  Try
+  DM.ADOQuery2.ExecSQL;
+  showmessage('Alteração Realizada com Sucesso!');
+  form_listar_usuario.show;
+  form_editar_usuario.close;
+  except on E: Exception do
+    MessageDlg(E.Message,mtError,[mbOK],0);
+  End;
+
+
+
+end;
+
+procedure Tform_editar_usuario.btn_limparClick(Sender: TObject);
+begin
+var i : integer;
+for i := 0 to form_editar_usuario.ComponentCount -1 do
+begin
+if form_editar_usuario.Components[i] is TEdit then
+TEdit(form_editar_usuario.Components[i]).Clear;
+end;
+end;
+
+procedure Tform_editar_usuario.btn_localizarClick(Sender: TObject);
+begin
+
+  id := strtoint(edt_id.Text);
+  nome := edt_nome.Text;
+  telefone := edt_telefone.Text;
+  email := edt_email.Text;
+  cpf := edt_cpf.Text;
+  nivel_acesso := edt_nivel_acesso.Text;
+
+  DM.ADOQuery2.Close;
+  DM.ADOQuery2.SQL.Text := 'SELECT * FROM usuarios WHERE id_user = :pid ';
+  DM.ADOQuery2.Parameters.ParamByName('pid').Value := id;
+  DM.ADOQuery2.Open;
+
+  edt_nome.Text := DM.ADOQuery2.FieldByName('nome').AsString;
+  edt_telefone.Text := DM.ADOQuery2.FieldByName('telefone').AsString;
+  edt_email.Text := DM.ADOQuery2.FieldByName('email').AsString;
+  edt_cpf.Text := DM.ADOQuery2.FieldByName('cpf').AsString;
+
+  if DM.ADOQuery2.FieldValues['nivel_acesso'] = 1 then
+    begin
+       edt_nivel_acesso.Text := 'Administrador';
+    end
+  else
+    begin
+       edt_nivel_acesso.Text := 'Usuário';
+    end;
+
+
+end;
+
+end.

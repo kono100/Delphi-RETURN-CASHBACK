@@ -1,0 +1,14 @@
+program ProjRecuperarSenha;
+
+uses
+  Vcl.Forms,
+  UnitRecuperarSenha in 'UnitRecuperarSenha.pas' {FormRecuperarSenha};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormRecuperarSenha, FormRecuperarSenha);
+  Application.Run;
+end.

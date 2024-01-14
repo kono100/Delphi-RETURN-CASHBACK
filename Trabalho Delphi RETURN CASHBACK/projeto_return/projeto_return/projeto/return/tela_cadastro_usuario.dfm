@@ -1,0 +1,250 @@
+object form_cadastro_usuario: Tform_cadastro_usuario
+  Left = 0
+  Top = 0
+  Caption = 'Tela Cadastro de Usu'#225'rio'
+  ClientHeight = 244
+  ClientWidth = 590
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 56
+    Width = 89
+    Height = 13
+    Caption = 'Nome Completo'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 102
+    Width = 35
+    Height = 13
+    Caption = 'E-mail'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 386
+    Top = 103
+    Width = 49
+    Height = 13
+    Caption = 'Telefone'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 386
+    Top = 57
+    Width = 20
+    Height = 13
+    Caption = 'CPF'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 149
+    Width = 43
+    Height = 13
+    Caption = 'Usu'#225'rio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 160
+    Top = 149
+    Width = 35
+    Height = 13
+    Caption = 'Senha'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 296
+    Top = 149
+    Width = 99
+    Height = 13
+    Caption = 'Confirme a Senha'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 423
+    Top = 149
+    Width = 87
+    Height = 13
+    Caption = 'N'#237'vel de Acesso'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 593
+    Height = 41
+    Caption = 'Cadastro de Usu'#225'rio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object edt_nome: TEdit
+    Left = 24
+    Top = 75
+    Width = 329
+    Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object edt_email: TEdit
+    Left = 24
+    Top = 121
+    Width = 329
+    Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object edt_telefone: TMaskEdit
+    Left = 386
+    Top = 122
+    Width = 167
+    Height = 21
+    EditMask = '!\(00\)00000-0000;1;_'
+    MaxLength = 14
+    TabOrder = 3
+    Text = '(  )     -    '
+  end
+  object edt_cpf: TMaskEdit
+    Left = 386
+    Top = 76
+    Width = 167
+    Height = 21
+    EditMask = '000\.000\.000\-00;1;_'
+    MaxLength = 14
+    TabOrder = 4
+    Text = '   .   .   -  '
+  end
+  object edt_usuario: TEdit
+    Left = 24
+    Top = 168
+    Width = 121
+    Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+  end
+  object edt_senha: TEdit
+    Left = 160
+    Top = 168
+    Width = 121
+    Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 6
+  end
+  object edt_confirmar_senha: TEdit
+    Left = 296
+    Top = 168
+    Width = 121
+    Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 7
+  end
+  object btn_entrar: TBitBtn
+    Left = 432
+    Top = 211
+    Width = 121
+    Height = 25
+    Caption = '&Registrar'
+    TabOrder = 8
+    OnClick = btn_entrarClick
+  end
+  object edt_nivel_acesso: TComboBox
+    Left = 423
+    Top = 168
+    Width = 130
+    Height = 21
+    TabOrder = 9
+    Text = 'Selecione'
+    Items.Strings = (
+      'Administrador'
+      'Usu'#225'rio')
+  end
+  object btn_limpar: TButton
+    Left = 24
+    Top = 211
+    Width = 105
+    Height = 25
+    Caption = 'Limpar Campos'
+    TabOrder = 10
+    OnClick = btn_limparClick
+  end
+end

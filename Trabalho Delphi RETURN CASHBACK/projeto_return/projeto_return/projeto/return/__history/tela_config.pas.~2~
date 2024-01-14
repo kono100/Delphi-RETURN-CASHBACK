@@ -1,0 +1,31 @@
+unit tela_config;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  Tform_config = class(TForm)
+    edt_porcentagem: TEdit;
+    BitBtn1: TBitBtn;
+    Panel1: TPanel;
+    ADOQuery1: TADOQuery;
+    ADOConnConfig: TADOConnection;
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_config: Tform_config;
+
+implementation
+
+{$R *.dfm}
+
+end.

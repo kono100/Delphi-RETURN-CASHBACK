@@ -1,0 +1,14 @@
+program ProjAfetuar;
+
+uses
+  Vcl.Forms,
+  UnitTelasPadrao in '..\TELA AFETUAR231\TELA CONSULTAR\UnitTelasPadrao.pas' {FormAfetuar};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormAfetuar, FormAfetuar);
+  Application.Run;
+end.

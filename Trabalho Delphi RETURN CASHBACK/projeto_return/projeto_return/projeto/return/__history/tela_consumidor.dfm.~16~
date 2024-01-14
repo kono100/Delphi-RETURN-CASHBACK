@@ -1,0 +1,181 @@
+object form_consumidor: Tform_consumidor
+  Left = 0
+  Top = 0
+  Caption = 'Tela de Consumidor'
+  ClientHeight = 388
+  ClientWidth = 710
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label9: TLabel
+    Left = 104
+    Top = 456
+    Width = 75
+    Height = 13
+    Caption = 'saldo_cashback'
+    FocusControl = DBEdit9
+  end
+  object DBEdit9: TDBEdit
+    Left = 104
+    Top = 472
+    Width = 134
+    Height = 21
+    DataField = 'saldo_cashback'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 104
+    Width = 713
+    Height = 273
+    DataSource = DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Width = 187
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpf'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_nascimento'
+        Width = 101
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'email'
+        Width = 202
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telefone'
+        Visible = True
+      end>
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 710
+    Height = 41
+    Caption = 'Listagem de Consumidores'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object btn_deletar: TBitBtn
+    Left = 318
+    Top = 47
+    Width = 75
+    Height = 25
+    Caption = 'Deletar'
+    TabOrder = 3
+  end
+  object btn_editar_registro: TBitBtn
+    Left = 399
+    Top = 47
+    Width = 97
+    Height = 25
+    Caption = '&Editar Registro'
+    TabOrder = 4
+  end
+  object btn_novo_registro: TBitBtn
+    Left = 502
+    Top = 47
+    Width = 97
+    Height = 25
+    Caption = '&Novo Registro'
+    TabOrder = 5
+  end
+  object btn_atualizar: TBitBtn
+    Left = 605
+    Top = 47
+    Width = 97
+    Height = 25
+    Caption = '&Atualizar'
+    TabOrder = 6
+  end
+  object ADOQuery_consumidor: TADOQuery
+    Active = True
+    Connection = ADOConnection2
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from consumidores')
+    Left = 16
+    Top = 48
+    object ADOQuery_consumidorid_consumidores: TAutoIncField
+      FieldName = 'id_consumidores'
+      ReadOnly = True
+    end
+    object ADOQuery_consumidornome: TWideStringField
+      FieldName = 'nome'
+      Size = 50
+    end
+    object ADOQuery_consumidorcpf: TWideStringField
+      FieldName = 'cpf'
+      Size = 14
+    end
+    object ADOQuery_consumidordata_nascimento: TDateField
+      FieldName = 'data_nascimento'
+    end
+    object ADOQuery_consumidoremail: TWideStringField
+      FieldName = 'email'
+      Size = 50
+    end
+    object ADOQuery_consumidortelefone: TWideStringField
+      FieldName = 'telefone'
+      Size = 15
+    end
+    object ADOQuery_consumidorsenha: TWideStringField
+      FieldName = 'senha'
+      Size = 255
+    end
+    object ADOQuery_consumidordata_reg: TDateTimeField
+      FieldName = 'data_reg'
+    end
+    object ADOQuery_consumidordata_alt: TDateTimeField
+      FieldName = 'data_alt'
+    end
+    object ADOQuery_consumidorsaldo_cashback: TFloatField
+      FieldName = 'saldo_cashback'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery_consumidor
+    Left = 104
+    Top = 48
+  end
+  object ADOConnection2: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Postg' +
+      'reSQL35W'
+    LoginPrompt = False
+    Left = 176
+    Top = 48
+  end
+end

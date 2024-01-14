@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{94A55A0F-7887-435F-9D7F-9BB2887A561F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Recuperação de Senha\ProjRecuperarSenha.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Cadastro novo\ProjCadastro.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProjRecuperarSenha">
+        <MSBuild Projects="..\Recuperação de Senha\ProjRecuperarSenha.dproj"/>
+    </Target>
+    <Target Name="ProjRecuperarSenha:Clean">
+        <MSBuild Projects="..\Recuperação de Senha\ProjRecuperarSenha.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjRecuperarSenha:Make">
+        <MSBuild Projects="..\Recuperação de Senha\ProjRecuperarSenha.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjCadastro">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj"/>
+    </Target>
+    <Target Name="ProjCadastro:Clean">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjCadastro:Make">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProjRecuperarSenha;ProjCadastro"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProjRecuperarSenha:Clean;ProjCadastro:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProjRecuperarSenha:Make;ProjCadastro:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

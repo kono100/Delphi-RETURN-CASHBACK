@@ -1,0 +1,16 @@
+object form_editar_consumidor: Tform_editar_consumidor
+  Left = 0
+  Top = 0
+  Caption = 'Tela Editar Consumidor'
+  ClientHeight = 327
+  ClientWidth = 702
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+end

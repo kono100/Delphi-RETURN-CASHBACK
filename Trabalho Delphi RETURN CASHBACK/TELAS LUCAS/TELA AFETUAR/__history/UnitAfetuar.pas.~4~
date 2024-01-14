@@ -1,0 +1,131 @@
+unit UnitAfetuar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.ImageList,
+  Vcl.ImgList, Vcl.ExtCtrls, System.Actions, Vcl.ActnList, Vcl.Imaging.pngimage,
+  Vcl.Imaging.jpeg, Vcl.Mask, Vcl.ButtonGroup;
+
+type
+  TFormAfetuar = class(TForm)
+    btn_logout: TButton;
+    img_background: TImage;
+    lbl_titulomenu: TLabel;
+    Image5: TImage;
+    Label1: TLabel;
+    BtConsultar: TButton;
+    Memo1: TMemo;
+    Label2: TLabel;
+    Edit1: TEdit;
+    BtResgatar: TButton;
+    MaskEdit2: TMaskEdit;
+    Label3: TLabel;
+    MaskEdit1: TMaskEdit;
+    procedure btn_logoutClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure BtResgatarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormAfetuar: TFormAfetuar;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormAfetuar.btn_logoutClick(Sender: TObject);
+begin
+
+close;
+
+end;
+
+procedure TFormAfetuar.BtResgatarClick(Sender: TObject);
+begin
+
+begin
+
+var total:real;
+total:= strtofloat(Edit1.Text);
+
+
+end;
+
+
+if (Edit1.Text <= '') or( Edit1.Text <= '0')  then
+
+begin
+
+
+
+
+end
+
+else
+begin
+
+showmessage ('RESGATADO !');
+
+
+
+
+end;
+
+
+
+end;
+
+procedure TFormAfetuar.Button1Click(Sender: TObject);
+begin
+
+if (Edit1.Text <= '') or( Edit1.Text <= '0')  then
+
+//BtConsultar.Enabled:=True;
+//BtResgatar.Enabled:=False;
+
+begin
+
+Memo1.Font.Color:=CLRed;
+Memo1.clear;
+Memo1.lines.add('');
+Memo1.lines.add('');
+Memo1.lines.add('VAZIO ! ');
+Memo1.lines.add('');
+Memo1.lines.add('');
+Memo1.lines.add('TOTAL DE : 0 ');
+Memo1.lines.add('');
+
+end
+
+else
+ begin
+
+ var total:real;
+total:= strtofloat(Edit1.Text);
+
+ Memo1.Font.Color:=CLGreen;
+Memo1.clear;
+Memo1.lines.add('');
+Memo1.lines.add('');
+Memo1.lines.add('CONSULTADO ! ');
+Memo1.lines.add('');
+Memo1.lines.add('');
+Memo1.lines.add('TOTAL DE :'+floattostr(total));
+Memo1.lines.add('');
+
+
+
+end;
+
+//BtConsultar.Enabled:=False;
+//BtResgatar.Enabled:=True;
+
+end;
+
+end.

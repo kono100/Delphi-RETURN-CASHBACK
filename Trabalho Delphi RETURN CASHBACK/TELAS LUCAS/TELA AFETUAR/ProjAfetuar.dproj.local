@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/11/22 19:11:39.000.837,=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 20:30:05.000.554,C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.dfm</Transaction>
+    <Transaction>2022/11/22 20:30:05.000.554,C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.pas</Transaction>
+    <Transaction>2022/11/22 20:30:53.000.561,C:\Users\USER\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\projmenuHome.dproj</Transaction>
+    <Transaction>2022/11/22 20:31:08.000.335,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.pas=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\menuprincipal.pas</Transaction>
+    <Transaction>2022/11/22 20:31:08.000.335,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.dfm=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\menuprincipal.dfm</Transaction>
+    <Transaction>2022/11/27 02:26:24.000.912,C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHIT\projmenuHome.dproj=C:\Users\User\Desktop\projTelaPadrao.dproj</Transaction>
+    <Transaction>2022/11/27 02:26:59.000.893,C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHIT\menuprincipal.pas=C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHI\UnitTelasPadrao.pas</Transaction>
+    <Transaction>2022/11/27 02:26:59.000.894,C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHIT\menuprincipal.dfm=C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHI\UnitTelasPadrao.dfm</Transaction>
+    <Transaction>2022/11/27 02:27:25.000.736,C:\Users\User\Desktop\projTelaPadrao.dproj=C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHI\projTelaPadrao.dproj</Transaction>
+    <Transaction>2022/11/29 13:50:29.000.551,C:\Users\User\Desktop\TELAS LUCAS\TELA AFETUAR231\TELA CONSULTAR\projTelaPadrao.dproj=C:\Users\User\Desktop\TELAS LUCAS\TELA AFETUAR\ProjAfetuar.dproj</Transaction>
+    <Transaction>2022/11/29 13:50:54.000.656,C:\Users\User\Desktop\TELAS LUCAS\TELA AFETUAR231\TELA CONSULTAR\UnitTelasPadrao.dfm=C:\Users\User\Desktop\TELAS LUCAS\TELA AFETUAR\UnitAfetuar.dfm</Transaction>
+    <Transaction>2022/11/29 13:50:54.000.656,C:\Users\User\Desktop\TELAS LUCAS\TELA AFETUAR231\TELA CONSULTAR\UnitTelasPadrao.pas=C:\Users\User\Desktop\TELAS LUCAS\TELA AFETUAR\UnitAfetuar.pas</Transaction>
+    <Transaction>2022/11/29 16:10:08.000.182,=C:\Users\User\Desktop\TELAS LUCAS\148-FontesFormat\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 16:10:19.000.809,=C:\Users\User\Desktop\TELAS LUCAS\148-FontesFormat\Fontes\uFormat.pas</Transaction>
+  </Transactions>
+</BorlandProject>

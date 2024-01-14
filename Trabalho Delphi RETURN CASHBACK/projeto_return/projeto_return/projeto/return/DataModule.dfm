@@ -1,0 +1,58 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 292
+  Width = 390
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Postg' +
+      'reSQL35W'
+    LoginPrompt = False
+    Left = 32
+    Top = 16
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from usuarios')
+    Left = 112
+    Top = 16
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 176
+    Top = 16
+  end
+  object ADOQuery2: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from usuarios')
+    Left = 16
+    Top = 80
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOQuery2
+    Left = 88
+    Top = 80
+  end
+  object ADOQuery3: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from consumidores')
+    Left = 8
+    Top = 144
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOQuery3
+    Left = 72
+    Top = 144
+  end
+end

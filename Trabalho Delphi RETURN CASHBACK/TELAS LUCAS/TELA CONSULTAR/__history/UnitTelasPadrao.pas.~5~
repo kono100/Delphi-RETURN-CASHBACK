@@ -1,0 +1,70 @@
+unit UnitTelasPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.ImageList,
+  Vcl.ImgList, Vcl.ExtCtrls, System.Actions, Vcl.ActnList, Vcl.Imaging.pngimage,
+  Vcl.Imaging.jpeg, Vcl.Mask, Vcl.ButtonGroup;
+
+type
+  Tfrmmenu_principal = class(TForm)
+    btn_logout: TButton;
+    img_background: TImage;
+    lbl_titulomenu: TLabel;
+    Image5: TImage;
+    MaskEdit1: TMaskEdit;
+    Label1: TLabel;
+    BtConsultar: TButton;
+    Memo1: TMemo;
+    Label2: TLabel;
+    Edit1: TEdit;
+    procedure btn_logoutClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmmenu_principal: Tfrmmenu_principal;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrmmenu_principal.btn_logoutClick(Sender: TObject);
+begin
+close;
+end;
+
+procedure Tfrmmenu_principal.Button1Click(Sender: TObject);
+begin
+
+if (Edit1.Text <= '') or( Edit1.Text <= '0')  then
+
+
+begin
+
+Memo1.Font.Color:=CLRed;
+//Memo1.clear;
+Memo1.lines.add('Nada ! ');
+
+
+end
+
+else
+ begin
+
+
+ Memo1.Font.Color:=CLGreen;
+//Memo1.clear;
+Memo1.lines.add('CONSULTADO ! ');
+
+
+end;
+end;
+
+end.

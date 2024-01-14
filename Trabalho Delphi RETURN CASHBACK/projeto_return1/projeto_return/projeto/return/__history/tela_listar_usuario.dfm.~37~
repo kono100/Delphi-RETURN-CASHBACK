@@ -1,0 +1,121 @@
+object form_listar_usuario: Tform_listar_usuario
+  Left = 0
+  Top = 0
+  Caption = 'Tela de Usu'#225'rios'
+  ClientHeight = 320
+  ClientWidth = 776
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 777
+    Height = 41
+    Caption = 'Listagem de Usu'#225'rios'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object btn_novo_registro: TBitBtn
+    Left = 664
+    Top = 47
+    Width = 97
+    Height = 25
+    Caption = '&Novo Registro'
+    TabOrder = 1
+    OnClick = btn_novo_registroClick
+  end
+  object btn_editar_registro: TBitBtn
+    Left = 561
+    Top = 47
+    Width = 97
+    Height = 25
+    Caption = '&Editar Registro'
+    TabOrder = 2
+    OnClick = btn_editar_registroClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 112
+    Width = 760
+    Height = 161
+    DataSource = DataSource1
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_user'
+        Width = 43
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Width = 122
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'username'
+        Width = 76
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nivel_acesso'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'email'
+        Width = 174
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpf'
+        Visible = True
+      end>
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Postg' +
+      'reSQL35W'
+    LoginPrompt = False
+    Left = 32
+    Top = 48
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    AfterOpen = ADOQuery1AfterOpen
+    Parameters = <>
+    SQL.Strings = (
+      'select * from usuarios')
+    Left = 104
+    Top = 48
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 160
+    Top = 48
+  end
+end

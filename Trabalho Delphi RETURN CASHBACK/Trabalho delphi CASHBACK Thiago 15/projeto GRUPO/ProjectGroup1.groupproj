@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3EC44A46-B2F7-478E-8821-F16459334463}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Login Novo\ProjLogin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Cadastro novo\ProjCadastro.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProjLogin">
+        <MSBuild Projects="..\Login Novo\ProjLogin.dproj"/>
+    </Target>
+    <Target Name="ProjLogin:Clean">
+        <MSBuild Projects="..\Login Novo\ProjLogin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjLogin:Make">
+        <MSBuild Projects="..\Login Novo\ProjLogin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjCadastro">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj"/>
+    </Target>
+    <Target Name="ProjCadastro:Clean">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjCadastro:Make">
+        <MSBuild Projects="..\Cadastro novo\ProjCadastro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProjLogin;ProjCadastro"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProjLogin:Clean;ProjCadastro:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProjLogin:Make;ProjCadastro:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

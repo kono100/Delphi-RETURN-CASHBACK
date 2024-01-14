@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/04 18:51:12.000.497,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/04 18:56:48.000.573,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/04 20:24:44.000.778,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/04 20:25:06.000.446,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/18 19:14:25.000.138,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/18 19:23:11.000.570,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/18 19:23:34.000.849,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/08 10:18:18.000.029,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 12:45:40.000.191,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 12:48:15.000.738,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\lucas\Desktop\return\tela_login.dfm</Transaction>
+    <Transaction>2022/11/29 12:48:15.000.738,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\lucas\Desktop\return\tela_login.pas</Transaction>
+    <Transaction>2022/11/29 12:49:38.000.753,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 12:52:04.000.680,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\lucas\Desktop\return\tela_principal.dfm</Transaction>
+    <Transaction>2022/11/29 12:52:04.000.680,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\lucas\Desktop\return\tela_principal.pas</Transaction>
+    <Transaction>2022/11/29 12:53:25.000.199,=C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 12:56:18.000.838,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\lucas\Desktop\return\DataModule.pas</Transaction>
+    <Transaction>2022/11/29 12:56:18.000.838,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\lucas\Desktop\return\DataModule.dfm</Transaction>
+    <Transaction>2022/11/29 13:37:48.000.039,C:\Users\lucas\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\lucas\Desktop\return\Project1.dproj</Transaction>
+    <Transaction>2022/11/29 19:27:52.000.953,=C:\Users\lucas\Desktop\return\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 19:37:51.000.956,C:\Users\lucas\Desktop\return\Unit1.dfm=C:\Users\lucas\Desktop\return\tela_cadastro_usuario.dfm</Transaction>
+    <Transaction>2022/11/29 19:37:51.000.956,C:\Users\lucas\Desktop\return\Unit1.pas=C:\Users\lucas\Desktop\return\tela_cadastro_usuario.pas</Transaction>
+    <Transaction>2022/11/29 21:04:09.000.055,=C:\Users\lucas\Desktop\return\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 21:10:35.000.132,C:\Users\lucas\Desktop\return\Unit1.pas=C:\Users\lucas\Desktop\return\tela_listar_usuario.pas</Transaction>
+    <Transaction>2022/11/29 21:10:35.000.132,C:\Users\lucas\Desktop\return\Unit1.dfm=C:\Users\lucas\Desktop\return\tela_listar_usuario.dfm</Transaction>
+    <Transaction>2022/11/29 21:44:49.000.164,=C:\Users\lucas\Desktop\return\Unit1.pas</Transaction>
+    <Transaction>2022/11/29 21:47:27.000.185,C:\Users\lucas\Desktop\return\Unit1.pas=C:\Users\lucas\Desktop\return\editar_usuario.pas</Transaction>
+    <Transaction>2022/11/29 21:47:27.000.185,C:\Users\lucas\Desktop\return\Unit1.dfm=C:\Users\lucas\Desktop\return\editar_usuario.dfm</Transaction>
+    <Transaction>2022/12/01 15:59:14.000.035,=C:\Users\lucas\Desktop\return\Unit1.pas</Transaction>
+    <Transaction>2022/12/01 15:59:22.000.581,C:\Users\lucas\Desktop\return\Unit1.dfm=C:\Users\lucas\Desktop\return\tela_consumidor.dfm</Transaction>
+    <Transaction>2022/12/01 15:59:22.000.581,C:\Users\lucas\Desktop\return\Unit1.pas=C:\Users\lucas\Desktop\return\tela_consumidor.pas</Transaction>
+    <Transaction>2022/12/05 18:44:13.000.080,=C:\Users\lucas\Desktop\return\Unit1.pas</Transaction>
+    <Transaction>2022/12/05 18:44:25.000.367,C:\Users\lucas\Desktop\return\Unit1.pas=C:\Users\lucas\Desktop\return\tela_efetuar_cashback.pas</Transaction>
+    <Transaction>2022/12/05 18:44:25.000.367,C:\Users\lucas\Desktop\return\Unit1.dfm=C:\Users\lucas\Desktop\return\tela_efetuar_cashback.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

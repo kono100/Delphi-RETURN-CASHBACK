@@ -1,0 +1,53 @@
+unit tela_consumidor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  Tform_consumidor = class(TForm)
+    ADOQuery_consumidor: TADOQuery;
+    DataSource1: TDataSource;
+    ADOConnection2: TADOConnection;
+    ADOQuery_consumidorid_consumidores: TAutoIncField;
+    ADOQuery_consumidornome: TWideStringField;
+    ADOQuery_consumidorcpf: TWideStringField;
+    ADOQuery_consumidordata_nascimento: TDateField;
+    ADOQuery_consumidoremail: TWideStringField;
+    ADOQuery_consumidortelefone: TWideStringField;
+    ADOQuery_consumidordata_reg: TDateTimeField;
+    ADOQuery_consumidordata_alt: TDateTimeField;
+    ADOQuery_consumidorsaldo_cashback: TFloatField;
+    Label9: TLabel;
+    DBEdit9: TDBEdit;
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+    btn_deletar: TBitBtn;
+    btn_editar_registro: TBitBtn;
+    btn_novo_registro: TBitBtn;
+    btn_atualizar: TBitBtn;
+    procedure btn_novo_registroClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_consumidor: Tform_consumidor;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, tela_cadastro_consumidor;
+
+procedure Tform_consumidor.btn_novo_registroClick(Sender: TObject);
+begin
+form_cadastro_consumidor.show;
+end;
+
+end.

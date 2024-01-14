@@ -1,0 +1,182 @@
+object form_transacoes: Tform_transacoes
+  Left = 0
+  Top = 0
+  Caption = 'Tela de Transa'#231#245'es'
+  ClientHeight = 561
+  ClientWidth = 634
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 57
+    Width = 51
+    Height = 13
+    Caption = 'Data Inicio'
+  end
+  object Label2: TLabel
+    Left = 135
+    Top = 57
+    Width = 42
+    Height = 13
+    Caption = 'Data Fim'
+  end
+  object Label3: TLabel
+    Left = 262
+    Top = 57
+    Width = 88
+    Height = 13
+    Caption = 'Tipo de Transa'#231#227'o'
+  end
+  object Label4: TLabel
+    Left = 389
+    Top = 57
+    Width = 33
+    Height = 13
+    Caption = 'Cliente'
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 128
+    Width = 633
+    Height = 392
+    DataSource = DataSourceTransacoes
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_transacoes'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nota_fiscal'
+        Width = 84
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'valor'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tipo_transacao'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_reg'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome_consumidor'
+        Width = 103
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cashback'
+        Visible = True
+      end>
+  end
+  object btn_atualizar: TButton
+    Left = 551
+    Top = 47
+    Width = 75
+    Height = 25
+    Caption = 'Atualizar'
+    TabOrder = 1
+    OnClick = btn_atualizarClick
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 633
+    Height = 41
+    Caption = 'Transa'#231#245'es de CashBack'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object edt_data_inicio: TEdit
+    Left = 8
+    Top = 76
+    Width = 121
+    Height = 21
+    TabOrder = 3
+    TextHint = '  /  /   '
+  end
+  object edt_transacao: TEdit
+    Left = 262
+    Top = 76
+    Width = 121
+    Height = 21
+    TabOrder = 4
+    TextHint = 'Transa'#231#227'o'
+  end
+  object edt_data_final: TEdit
+    Left = 135
+    Top = 76
+    Width = 121
+    Height = 21
+    TabOrder = 5
+    TextHint = '  /  /   '
+  end
+  object edt_nome: TEdit
+    Left = 389
+    Top = 76
+    Width = 121
+    Height = 21
+    TabOrder = 6
+    TextHint = 'Nome'
+  end
+  object btn_pesquisar: TBitBtn
+    Left = 516
+    Top = 74
+    Width = 110
+    Height = 25
+    Caption = 'Pesquisar'
+    TabOrder = 7
+  end
+  object ADOConnTransacoes: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Postg' +
+      'reSQL35W'
+    LoginPrompt = False
+    Left = 24
+    Top = 528
+  end
+  object ADOQueryTransacoes: TADOQuery
+    Active = True
+    Connection = ADOConnTransacoes
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from transacoes')
+    Left = 104
+    Top = 528
+  end
+  object DataSourceTransacoes: TDataSource
+    DataSet = ADOQueryTransacoes
+    Left = 184
+    Top = 528
+  end
+end

@@ -1,0 +1,117 @@
+unit tela_efetuar_cashback;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.Imaging.pngimage, Vcl.Buttons, Data.DB,
+  Data.Win.ADODB;
+
+type
+  Ttela_efetuar_cashbar = class(TForm)
+    Image5: TImage;
+    Label4: TLabel;
+    edt_cpf: TMaskEdit;
+    Label1: TLabel;
+    btn_verificar: TBitBtn;
+    lbl_nome: TLabel;
+    lbl_nomeCliente: TLabel;
+    btn_inserir: TBitBtn;
+    ADOConnectionConfig: TADOConnection;
+    ADOQueryConfig: TADOQuery;
+    DataSource1: TDataSource;
+    edt_valor: TEdit;
+    ADOQuery2: TADOQuery;
+    ADOConnection2: TADOConnection;
+    DataSource2: TDataSource;
+    edt_nota_fiscal: TEdit;
+    procedure btn_verificarClick(Sender: TObject);
+    procedure btn_inserirClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  tela_efetuar_cashbar: Ttela_efetuar_cashbar;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure Ttela_efetuar_cashbar.btn_inserirClick(Sender: TObject);
+var
+cpf, nome_cliente, nota_fiscal : string;
+valor, saldo_db, soma, cash_config, total : real;
+begin
+
+  cpf := edt_cpf.Text;
+  nota_fiscal := edt_nota_fiscal.Text;
+  valor := strtofloat(edt_valor.Text);
+
+  //verificando quem é o cliente
+  DM.ADOQuery3.Close;
+  DM.ADOQuery3.SQL.Text := 'SELECT * FROM consumidores WHERE cpf = :pcpf ';
+  DM.ADOQuery3.Parameters.ParamByName('pcpf').Value := cpf;
+  DM.ADOQuery3.Open;
+
+  saldo_db := strtofloat(DM.ADOQuery3.FieldByName('saldo_cashback').AsString);
+  nome_cliente := DM.ADOQuery3.FieldByName('nome').AsString;
+
+  //puxando informações do percentual
+  ADOQueryConfig.Close;
+  ADOQueryConfig.SQL.Text := 'SELECT * FROM configuracao';
+  ADOQueryConfig.Open;
+
+  cash_config := strtofloat(ADOQueryConfig.FieldByName('porcentagem_cashback').AsString);
+
+  //fazendo calculo
+  soma := valor * cash_config / 100;
+  total := saldo_db + soma;
+
+  //atualizando saldo do cliente
+  DM.ADOQuery3.Close;
+  DM.ADOQuery3.SQL.Text := 'UPDATE consumidores SET saldo_cashback = :ptotal WHERE cpf = :pcpf ';
+  DM.ADOQuery3.Parameters.ParamByName('pcpf').Value := cpf;
+  DM.ADOQuery3.Parameters.ParamByName('ptotal').Value := total;
+  Try
+  DM.ADOQuery3.ExecSQL;
+  except on E: Exception do
+    MessageDlg(E.Message,mtError,[mbOK],0);
+  End;
+
+  //insedindo transação
+  ADOQuery2.Close;
+  ADOQuery2.SQL.Clear;
+  ADOQuery2.SQL.Text:= 'INSERT INTO transacoes (nota_fiscal, valor, tipo_transacao, nome_consumidor, cashback) VALUES(:pnota_fiscal, :pvalor, :ptipo, :pnome_consumidor, :pcashback)';
+  ADOQuery2.Parameters.ParamByName('pnota_fiscal').Value := nota_fiscal;
+  ADOQuery2.Parameters.ParamByName('pvalor').Value := valor;
+  ADOQuery2.Parameters.ParamByName('ptipo').Value := 'Entrada';
+  ADOQuery2.Parameters.ParamByName('pnome_consumidor').Value := nome_cliente;
+  ADOQuery2.Parameters.ParamByName('pcashback').Value := soma;
+  ADOQuery2.ExecSQL;
+
+  ShowMessage('CashBack realizado com sucesso! Valor Recebido: R$'+FormatFloat('###,###,##0.00', soma));
+  tela_efetuar_cashbar.close;
+
+
+end;
+
+procedure Ttela_efetuar_cashbar.btn_verificarClick(Sender: TObject);
+var cpf : string;
+begin
+  cpf := edt_cpf.Text;
+
+  DM.ADOQuery3.Close;
+  DM.ADOQuery3.SQL.Text := 'SELECT * FROM consumidores WHERE cpf = :pcpf ';
+  DM.ADOQuery3.Parameters.ParamByName('pcpf').Value := cpf;
+  DM.ADOQuery3.Open;
+
+  lbl_nomeCliente.Caption := DM.ADOQuery3.FieldByName('nome').AsString;
+end;
+
+end.

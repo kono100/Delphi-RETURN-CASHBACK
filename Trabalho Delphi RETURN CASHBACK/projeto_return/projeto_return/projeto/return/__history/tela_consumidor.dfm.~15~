@@ -1,0 +1,250 @@
+object form_consumidor: Tform_consumidor
+  Left = 0
+  Top = 0
+  Caption = 'Tela de Consumidor'
+  ClientHeight = 456
+  ClientWidth = 733
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label9: TLabel
+    Left = 104
+    Top = 456
+    Width = 75
+    Height = 13
+    Caption = 'saldo_cashback'
+    FocusControl = DBEdit9
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 96
+    Width = 26
+    Height = 13
+    Caption = 'nome'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 327
+    Top = 93
+    Width = 15
+    Height = 13
+    Caption = 'cpf'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 544
+    Top = 93
+    Width = 82
+    Height = 13
+    Caption = 'data_nascimento'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 152
+    Width = 24
+    Height = 13
+    Caption = 'email'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 360
+    Top = 152
+    Width = 40
+    Height = 13
+    Caption = 'telefone'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 576
+    Top = 149
+    Width = 26
+    Height = 13
+    Caption = 'Saldo'
+    FocusControl = DBEdit6
+  end
+  object DBEdit9: TDBEdit
+    Left = 104
+    Top = 472
+    Width = 134
+    Height = 21
+    DataField = 'saldo_cashback'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 112
+    Width = 297
+    Height = 21
+    DataField = 'nome'
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 327
+    Top = 112
+    Width = 186
+    Height = 21
+    DataField = 'cpf'
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 544
+    Top = 112
+    Width = 177
+    Height = 21
+    DataField = 'data_nascimento'
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 8
+    Top = 168
+    Width = 334
+    Height = 21
+    DataField = 'email'
+    DataSource = DataSource1
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 360
+    Top = 171
+    Width = 193
+    Height = 21
+    DataField = 'telefone'
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 401
+    Top = 24
+    Width = 320
+    Height = 33
+    DataSource = DataSource1
+    TabOrder = 6
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 224
+    Width = 713
+    Height = 217
+    DataSource = DataSource1
+    TabOrder = 7
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Width = 187
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpf'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_nascimento'
+        Width = 101
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'email'
+        Width = 202
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telefone'
+        Visible = True
+      end>
+  end
+  object DBEdit6: TDBEdit
+    Left = 576
+    Top = 168
+    Width = 145
+    Height = 21
+    DataField = 'saldo_cashback'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 8
+  end
+  object ADOQuery_consumidor: TADOQuery
+    Active = True
+    Connection = ADOConnection2
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from consumidores')
+    Left = 56
+    Top = 8
+    object ADOQuery_consumidorid_consumidores: TAutoIncField
+      FieldName = 'id_consumidores'
+      ReadOnly = True
+    end
+    object ADOQuery_consumidorid_user: TAutoIncField
+      FieldName = 'id_user'
+      ReadOnly = True
+    end
+    object ADOQuery_consumidornome: TWideStringField
+      FieldName = 'nome'
+      Size = 50
+    end
+    object ADOQuery_consumidorcpf: TWideStringField
+      FieldName = 'cpf'
+      Size = 14
+    end
+    object ADOQuery_consumidordata_nascimento: TDateField
+      FieldName = 'data_nascimento'
+    end
+    object ADOQuery_consumidoremail: TWideStringField
+      FieldName = 'email'
+      Size = 50
+    end
+    object ADOQuery_consumidortelefone: TWideStringField
+      FieldName = 'telefone'
+      Size = 15
+    end
+    object ADOQuery_consumidorsenha: TWideStringField
+      FieldName = 'senha'
+      Size = 255
+    end
+    object ADOQuery_consumidordata_reg: TDateTimeField
+      FieldName = 'data_reg'
+    end
+    object ADOQuery_consumidordata_alt: TDateTimeField
+      FieldName = 'data_alt'
+    end
+    object ADOQuery_consumidorsaldo_cashback: TFloatField
+      FieldName = 'saldo_cashback'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery_consumidor
+    Left = 176
+    Top = 8
+  end
+  object ADOConnection2: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Postg' +
+      'reSQL35W'
+    LoginPrompt = False
+    Left = 272
+    Top = 8
+  end
+end

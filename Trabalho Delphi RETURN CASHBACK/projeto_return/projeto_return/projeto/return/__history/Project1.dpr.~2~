@@ -1,0 +1,18 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  tela_login in 'tela_login.pas' {form_login},
+  tela_principal in 'tela_principal.pas' {form_principal},
+  DataModule in 'DataModule.pas' {DM: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tform_login, form_login);
+  Application.CreateForm(Tform_principal, form_principal);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.

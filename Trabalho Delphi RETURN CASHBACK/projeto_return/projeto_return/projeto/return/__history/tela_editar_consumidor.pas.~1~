@@ -1,0 +1,24 @@
+unit tela_editar_consumidor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  Tform_editar_consumidor = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_editar_consumidor: Tform_editar_consumidor;
+
+implementation
+
+{$R *.dfm}
+
+end.

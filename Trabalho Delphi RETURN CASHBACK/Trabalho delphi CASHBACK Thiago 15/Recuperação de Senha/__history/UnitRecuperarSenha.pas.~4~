@@ -1,0 +1,42 @@
+unit UnitRecuperarSenha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB,
+  Data.Win.ADODB, Vcl.Imaging.pngimage;
+
+type
+  TFormRecuperarSenha = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    EdtRecupEmail: TEdit;
+    EdtRecupCPF: TEdit;
+    Panel1: TPanel;
+    Bt_Esqueci_Minha_senha: TButton;
+    ADOConnection1: TADOConnection;
+    Image1: TImage;
+    Image2: TImage;
+    procedure Bt_Esqueci_Minha_senhaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRecuperarSenha: TFormRecuperarSenha;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitRedifenirSenha;
+
+procedure TFormRecuperarSenha.Bt_Esqueci_Minha_senhaClick(Sender: TObject);
+begin
+FormRedifinirSenha.show;
+end;
+
+end.

@@ -1,0 +1,81 @@
+unit UnitRedifenirSenha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB,
+  Data.Win.ADODB, Vcl.Imaging.pngimage;
+
+type
+  TFormRedifinirSenha = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    EdtCodVerificação: TEdit;
+    EdtSenha: TEdit;
+    Panel1: TPanel;
+    BtRedefinirSenha: TButton;
+    ADOConnection1: TADOConnection;
+    Image2: TImage;
+    Label3: TLabel;
+    EdtConfirmarSenha: TEdit;
+    procedure BtRedefinirSenhaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRedifinirSenha: TFormRedifinirSenha;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormRedifinirSenha.BtRedefinirSenhaClick(Sender: TObject);
+begin
+
+
+begin
+
+begin
+
+
+if (EdtSenha.Text <> EdtConfirmarSenha.Text)   then
+begin
+
+EdtSenha.Font.Color:=clRed;
+EdtConfirmarSenha.Font.Color:=clRed;
+showmessage ('Senha Diferente !');
+
+end
+else
+begin
+if (EdtSenha.Text = EdtConfirmarSenha.Text)   then
+begin
+EdtSenha.Font.Color:=clBlack;
+EdtConfirmarSenha.Font.Color:=clBlack;
+end;
+
+
+begin
+
+showmessage ('Senha Redefinida ! ');
+
+close;
+
+end;
+end
+end;
+
+end;
+
+
+
+
+
+
+end;
+
+end.

@@ -1,0 +1,134 @@
+unit UnitLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB,
+  Data.Win.ADODB, Vcl.Imaging.pngimage;
+
+type
+  TNomeLogin = class(TForm)
+    Bt_Entrar: TButton;
+    Bt_Criar_Conta: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edt_Login: TEdit;
+    Edt_Senha: TEdit;
+    Panel1: TPanel;
+    Bt_Esqueci_Minha_senha: TButton;
+    ADOConnection1: TADOConnection;
+    Image1: TImage;
+    Image2: TImage;
+    procedure Bt_Criar_ContaClick(Sender: TObject);
+    procedure Bt_Esqueci_Minha_senhaClick(Sender: TObject);
+    procedure Bt_EntrarClick(Sender: TObject);
+    procedure Edt_SenhaMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Edt_LoginMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Edt_LoginKeyPress(Sender: TObject; var Key: Char);
+    procedure Edt_SenhaKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  NomeLogin: TNomeLogin;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitCadastro, UnitRecuperarSenha, UnitRedifenirSenha;
+
+procedure TNomeLogin.Bt_Criar_ContaClick(Sender: TObject);
+
+
+begin
+nomeCadastro.show;
+end;
+
+procedure TNomeLogin.Bt_EntrarClick(Sender: TObject);
+begin
+
+
+
+ if Edt_Login.Text = ''  then
+ begin
+    Edt_Login.Color:=clRed;
+  showmessage (' Campo E-Mail está vazio ! ')  ;
+  Edt_Login.SetFocus;
+ end
+
+ else
+
+ if Edt_Senha.Text = ''  then
+ begin
+
+  Edt_Senha.Color:=clRed;
+  showmessage (' Campo Senha está vazio ! ')  ;
+  Edt_Senha.SetFocus;
+ end
+
+ else
+
+
+
+
+ begin
+
+   showmessage (' só entrar se o campo de senha e loguin estiver certo == do banco de dados ');
+ end;
+
+
+
+
+end;
+
+
+procedure TNomeLogin.Bt_Esqueci_Minha_senhaClick(Sender: TObject);
+begin
+
+
+FormRecuperarSenha.show;
+
+end;
+
+procedure TNomeLogin.Edt_LoginKeyPress(Sender: TObject; var Key: Char);
+begin
+
+Edt_Login.Color:=clWhite;
+
+end;
+
+procedure TNomeLogin.Edt_LoginMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+
+
+Edt_Login.Color:=clWhite;
+
+
+end;
+
+procedure TNomeLogin.Edt_SenhaKeyPress(Sender: TObject; var Key: Char);
+begin
+
+ Edt_Senha.Color:=clWhite;
+
+end;
+
+procedure TNomeLogin.Edt_SenhaMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+
+
+ Edt_Senha.Color:=clWhite;
+
+
+end;
+
+end.

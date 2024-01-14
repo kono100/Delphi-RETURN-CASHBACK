@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/11/22 19:11:39.000.837,=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 20:30:05.000.554,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.dfm=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/11/22 20:30:05.000.554,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.pas=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 20:30:53.000.561,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\projmenuHome.dproj=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/11/22 20:31:08.000.335,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\menuprincipal.pas=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.pas</Transaction>
+    <Transaction>2022/11/22 20:31:08.000.335,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\menuprincipal.dfm=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.dfm</Transaction>
+    <Transaction>2022/11/27 02:26:24.000.912,C:\Users\User\Desktop\projTelaPadrao.dproj=C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHIT\projmenuHome.dproj</Transaction>
+    <Transaction>2022/11/27 02:26:59.000.894,C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHI\UnitTelasPadrao.dfm=C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHIT\menuprincipal.dfm</Transaction>
+    <Transaction>2022/11/27 02:26:59.000.893,C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHI\UnitTelasPadrao.pas=C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHIT\menuprincipal.pas</Transaction>
+    <Transaction>2022/11/27 02:27:25.000.736,C:\Users\User\Desktop\TELAS PADRAO TRABALHO DELPHI\projTelaPadrao.dproj=C:\Users\User\Desktop\projTelaPadrao.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

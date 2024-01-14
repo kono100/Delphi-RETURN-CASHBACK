@@ -1,0 +1,48 @@
+unit tela_transacoes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.FMTBcd, Data.DB, Data.SqlExpr,
+  Data.Win.ADODB, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  Tform_transacoes = class(TForm)
+    DBGrid1: TDBGrid;
+    ADOConnTransacoes: TADOConnection;
+    ADOQueryTransacoes: TADOQuery;
+    DataSourceTransacoes: TDataSource;
+    btn_atualizar: TButton;
+    Panel1: TPanel;
+    edt_data_inicio: TEdit;
+    edt_transacao: TEdit;
+    edt_data_final: TEdit;
+    Edit1: TEdit;
+    procedure btn_atualizarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_transacoes: Tform_transacoes;
+
+implementation
+
+{$R *.dfm}
+
+uses tela_efetuar_cashback;
+
+procedure Tform_transacoes.btn_atualizarClick(Sender: TObject);
+begin
+
+ADOQueryTransacoes.Active := False;
+ADOQueryTransacoes.Active := True;
+DBGrid1.Refresh;
+
+end;
+
+end.

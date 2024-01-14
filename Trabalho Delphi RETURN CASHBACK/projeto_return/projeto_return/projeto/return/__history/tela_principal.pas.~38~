@@ -1,0 +1,113 @@
+unit tela_principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.Imaging.pngimage;
+
+type
+  Tform_principal = class(TForm)
+    btn_cadastro_usuario: TButton;
+    btn_cadastro_consumidor: TButton;
+    btn_config: TButton;
+    btn_logout: TButton;
+    btn_cashback_insert: TButton;
+    btn_transacoes: TButton;
+    Button1: TButton;
+    Label1: TLabel;
+    Image2: TImage;
+    lbl_nome: TLabel;
+    lbl_acesso: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    procedure FormShow(Sender: TObject);
+    procedure btn_cadastro_usuarioClick(Sender: TObject);
+    procedure btn_logoutClick(Sender: TObject);
+    procedure btn_cadastro_consumidorClick(Sender: TObject);
+    procedure btn_cashback_insertClick(Sender: TObject);
+    procedure btn_transacoesClick(Sender: TObject);
+    procedure btn_configClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_principal: Tform_principal;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, tela_cadastro_usuario, tela_listar_usuario, tela_consumidor,
+  tela_efetuar_cashback, tela_transacoes, tela_configuracoes,
+  tela_listar_transacoes, tela_config, tela_resgate_saldo;
+
+procedure Tform_principal.btn_cadastro_consumidorClick(Sender: TObject);
+begin
+form_consumidor.show;
+end;
+
+procedure Tform_principal.btn_cadastro_usuarioClick(Sender: TObject);
+begin
+form_listar_usuario.Show;
+end;
+
+procedure Tform_principal.btn_cashback_insertClick(Sender: TObject);
+begin
+tela_efetuar_cashbar.show;
+end;
+
+
+procedure Tform_principal.btn_configClick(Sender: TObject);
+begin
+form_config.show;
+end;
+
+procedure Tform_principal.btn_logoutClick(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure Tform_principal.btn_transacoesClick(Sender: TObject);
+begin
+form_listar_transacoes.show;
+end;
+
+procedure Tform_principal.Button1Click(Sender: TObject);
+begin
+ form_resgate.show;
+end;
+
+procedure Tform_principal.FormShow(Sender: TObject);
+var
+nivel : string;
+begin
+
+
+  if (DM.ADOQuery1.FieldValues['nivel_acesso'] = 2) then
+  begin
+    btn_cadastro_usuario.Enabled := True;
+    btn_cadastro_consumidor.Enabled := False;
+    btn_config.Enabled := False;
+    lbl_acesso.Caption :=  'Usuário';
+   exit
+  end
+else // Senão: Libera todos os Botões
+ begin
+    btn_cadastro_usuario.Enabled := True;
+    btn_cadastro_consumidor.Enabled := True;
+    btn_config.Enabled := True;
+    lbl_acesso.Caption :=  'Administrador';
+ end;
+
+lbl_nome.Caption := DM.ADOQuery1.FieldValues['nome'];
+
+
+end;
+
+end.

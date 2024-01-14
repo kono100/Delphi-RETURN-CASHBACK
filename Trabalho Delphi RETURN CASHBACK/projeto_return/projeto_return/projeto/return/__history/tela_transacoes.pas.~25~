@@ -1,0 +1,67 @@
+unit tela_transacoes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.FMTBcd, Data.DB, Data.SqlExpr,
+  Data.Win.ADODB, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls;
+
+type
+  Tform_transacoes = class(TForm)
+    DBGrid1: TDBGrid;
+    ADOConnTransacoes: TADOConnection;
+    ADOQueryTransacoes: TADOQuery;
+    DataSourceTransacoes: TDataSource;
+    btn_atualizar: TButton;
+    Panel1: TPanel;
+    procedure btn_atualizarClick(Sender: TObject);
+    procedure btn_pesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_transacoes: Tform_transacoes;
+
+implementation
+
+{$R *.dfm}
+
+uses tela_efetuar_cashback;
+
+procedure Tform_transacoes.btn_atualizarClick(Sender: TObject);
+begin
+
+ADOQueryTransacoes.Active := False;
+ADOQueryTransacoes.Active := True;
+DBGrid1.Refresh;
+
+end;
+
+procedure Tform_transacoes.btn_pesquisarClick(Sender: TObject);
+var
+ Param: TParameter;
+begin
+
+  with ADOQueryTransacoes do
+  begin
+    Close;
+    sql.Clear;
+    sql.Add('select * from transacoes where data_reg between :pdata1 and :pdata2');
+    Param := ADOQueryTransacoes.Parameters.ParamByName('pdata1');
+    Param.DataType := ftDate;
+    Param.Value := edt_data_inicio.Date;
+    Param := ADOQueryTransacoes.Parameters.ParamByName('pdata2');
+    Param.DataType := ftDate;
+    Param.Value := edt_data_final.Date;
+    open;
+
+  end;
+
+end;
+
+end.

@@ -1,0 +1,49 @@
+unit tela_configuracoes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Data.DB,
+  Data.Win.ADODB;
+
+type
+  Tform_configuracao = class(TForm)
+    edt_porcentagem: TEdit;
+    BitBtn1: TBitBtn;
+    ADOQuery1: TADOQuery;
+    ADOConnConfig: TADOConnection;
+    DataSource1: TDataSource;
+    BitBtn2: TBitBtn;
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_configuracao: Tform_configuracao;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tform_configuracao.BitBtn2Click(Sender: TObject);
+
+var porcentagem : string;
+
+begin
+
+  porcentagem := edt_porcentagem.Text;
+
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Text := 'SELECT * FROM configuracao';
+  ADOQuery1.Open;
+
+  ShowMessage(ADOQuery1.FieldByName('porcentagem_cashback').AsString);
+
+
+end;
+
+end.

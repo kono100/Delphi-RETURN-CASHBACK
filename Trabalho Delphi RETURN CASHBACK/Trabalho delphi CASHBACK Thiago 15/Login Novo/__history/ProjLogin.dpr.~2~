@@ -1,0 +1,16 @@
+program ProjLogin;
+
+uses
+  Vcl.Forms,
+  UnitLogin in 'UnitLogin.pas' {nomeLogin},
+  UnitCadastro in '..\Cadastro novo\UnitCadastro.pas' {nomeCadastro};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TnomeLogin, nomeLogin);
+  Application.CreateForm(TnomeCadastro, nomeCadastro);
+  Application.Run;
+end.

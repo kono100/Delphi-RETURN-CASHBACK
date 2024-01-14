@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/11/22 19:11:39.837,=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 20:30:05.554,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.pas=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 20:30:05.554,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.dfm=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/11/22 20:30:53.561,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\projmenuHome.dproj=C:\Users\USER\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/11/22 20:31:08.335,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\menuprincipal.dfm=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.dfm</Transaction>
+    <Transaction>2022/11/22 20:31:08.335,C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\trabalho delphi\menuprincipal.pas=C:\Users\USER\Documents\Embarcadero\Studio\Projects\trablho delhpi\menuprincipal.pas</Transaction>
+  </Transactions>
+</BorlandProject>

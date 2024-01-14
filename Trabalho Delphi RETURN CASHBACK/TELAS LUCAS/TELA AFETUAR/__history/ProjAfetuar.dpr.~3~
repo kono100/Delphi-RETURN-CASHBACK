@@ -1,0 +1,17 @@
+program ProjAfetuar;
+
+uses
+  Vcl.Forms,
+  UnitAfetuar in 'UnitAfetuar.pas' {FormAfetuar},
+  Unit1 in '..\148-FontesFormat\Fontes\Unit1.pas' {Form1},
+  uFormat in '..\148-FontesFormat\Fontes\uFormat.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormAfetuar, FormAfetuar);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
